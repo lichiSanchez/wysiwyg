@@ -236,6 +236,12 @@ Requires:
               event.preventDefault();
             }
           });
+          // textarea.on('keyup', function (event) {
+            
+          // });
+          textarea.bind('paste', function() {
+            return false;
+          });
           textarea.on('click keyup focus mouseup', function () {
             $timeout(function () {
               scope.isBold = scope.cmdState('bold');
